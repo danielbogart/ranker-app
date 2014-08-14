@@ -16,11 +16,11 @@ feature 'Show all my wanted items', %q{
 
   scenario 'Show the latest wanted items on start page' do
     visit root_path
-    expect(page).to have_content 'Item 6'
-    expect(page).to have_content 'Item 5'
-    expect(page).to have_content 'Item 4'
-    expect(page).to have_content 'Item 3'
-    expect(page).to have_content 'Item 2'   
+    expect(page).to have_content 'item 6'
+    expect(page).to have_content 'item 5'
+    expect(page).to have_content 'item 4'
+    expect(page).to have_content 'item 3'
+    expect(page).to have_content 'item 2'   
   end
 
 end

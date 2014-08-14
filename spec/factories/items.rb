@@ -5,5 +5,6 @@ FactoryGirl.define do
   	sequence(:title) { |i| "Item #{i}"}
     price "9.99"
     happiness "9.99"
+    happines_index "6.00"
   end
 end
