@@ -28,7 +28,6 @@ RSpec.configure do |config|
 
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
-  config.include(UserHelper)
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.include FactoryGirl::Syntax::Methods
@@ -50,7 +49,6 @@ RSpec.configure do |config|
 
   config.after(:each) do
     Item.delete_all
-    User.delete_all
   end
 
   # RSpec Rails can automatically mix in different behaviours to your tests

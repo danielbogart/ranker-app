@@ -27,27 +27,25 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'simple_form', '~> 3.0.0.rc'
 # Use unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'devise'
 gem 'pg'
 
 group :test do
 	gem 'email_spec'
 end
 
-group :assets do
   gem 'less-rails-bootstrap'
   gem 'therubyracer'
   gem 'twitter-bootstrap-rails'
-end
+
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'

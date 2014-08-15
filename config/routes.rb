@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  authenticated :user do
+     resources :items
+     resources :home
+  end
+
   get 'users/new'
 
   get 'home/index'
