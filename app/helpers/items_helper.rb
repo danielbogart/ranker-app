@@ -1,7 +1,8 @@
 module ItemsHelper
 
 	def calculate_h_index(price, happiness)
-		happiness/price
+		@hapind = (happiness/price)
+		@hapind.round(2)
 	end
 
 	def save_if_valid(item_params)
