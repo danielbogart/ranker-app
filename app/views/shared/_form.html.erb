@@ -3,8 +3,8 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
-    <%= f.input :price %>
-    <%= f.input :happiness %>
+    <%= f.input :price, hint: 'No special characters' %>
+    <%= f.input :happiness, collection: 0..10 %>
   </div>
 
   <div class="form-actions">

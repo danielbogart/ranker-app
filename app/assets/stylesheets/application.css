@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.no-link-deco {
+	text-decoration: none;
+}
+
+.no-link-deco:hover {
+	text-decoration: none;
+}
+
+.no-link-deco:link {
+	text-decoration: none;
+	color: white;
+}

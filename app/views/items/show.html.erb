@@ -1,5 +1,5 @@
   <div class="page-header">
-    <h1>Your ranked items</h1>
+    <h1>Your ranked items sorted by H Index</h1>
   </div>
   
   <table class="table table-striped">
@@ -8,13 +8,13 @@
         <th>Title</th>
         <th>Price</th>
         <th>Happiness</th>
-        <th><%= link_to 'H Index', "/items/show" %></th>
+        <th><%= link_to 'H Index', "/items/show/" %></th>
         <th><%= link_to 'Delete All', "/items/show/" %></th>
       </tr>
     </thead>
 <% if user_signed_in? %>
     <tbody>
-      <% @items.order("created_at DESC").each do |p| %>
+      <% @items.order("happines_index DESC").each do |p| %>
       <tr>
         <td>
           <%= p.title %>
@@ -29,7 +29,7 @@
           <%= p.happines_index %>
         </td>
         <td>
-          <%= button_to 'Delete', [@items, p],:method => :delete, :class => "btn btn-danger no-link-deco" %>    
+            <%= link_to 'Delete', "/items/show/", :class => "btn btn-danger no-link-deco" %>    
         </td>
       </tr>
       <% end %>
