@@ -9,7 +9,7 @@
         <th>Price</th>
         <th>Happiness</th>
         <th><%= link_to 'H Index', "/items/show/" %></th>
-        <th><%= link_to 'Delete All', "/items/show/" %></th>
+        <th><%= link_to 'Delete All', '/items/index/' %></th>
       </tr>
     </thead>
 <% if user_signed_in? %>
@@ -29,12 +29,12 @@
           <%= p.happines_index %>
         </td>
         <td>
-            <%= link_to 'Delete', "/items/show/", :class => "btn btn-danger no-link-deco" %>    
+          <%= button_to 'Delete', p,:method => :delete, :class => "btn btn-danger no-link-deco" %>    
         </td>
       </tr>
       <% end %>
     </tbody>
   </table>
-  
+
 <%= render "shared/form" %>
 <% end %>

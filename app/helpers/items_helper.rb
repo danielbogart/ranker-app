@@ -29,9 +29,4 @@ module ItemsHelper
 	    end
 	end
 
-	def button_to_delete_item(item)
-		item.destroy
-	    redirect_to '/items/index', :notice => "Your item has been deleted"
-	end
-
 end
