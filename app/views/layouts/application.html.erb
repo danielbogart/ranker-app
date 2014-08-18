@@ -7,7 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 	<nav class="navbar navbar-default navbar-top" role="navigation">		
 			<div class="container">
 				<div class="navbar-header">
@@ -26,10 +25,10 @@
 						</ul>
 					</div>
 				</nav>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
-
+	<div class="container">
+		<p class="notice col-md-12"><%= notice %></p>
+		<p class="alert col-md-12"><%= alert %></p>
+	</div>
+	<%= yield %>
 </body>
 </html>
