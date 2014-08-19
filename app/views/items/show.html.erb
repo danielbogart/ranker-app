@@ -11,28 +11,14 @@
         <th>Price</th>
         <th>Happiness</th>
         <th><%= link_to 'H Index', "/items/show/" %></th>
-        <th><%= link_to 'Delete All', '/items/index/' %></th>
+        <th><%= link_to 'Delete All', '/delete_items', :action => 'destroy_all', :method => :destroy_all %></th> <!--what is this line doing?-->
       </tr>
     </thead>
 <% if user_signed_in? %>
     <tbody>
       <% @items.order("happines_index DESC").each do |p| %>
       <tr>
-        <td>
-          <%= p.title %>
-        </td>
-        <td>
-          $<%= p.price %>
-        </td> 
-        <td>
-          <%= p.happiness %>
-        </td>
-        <td>
-          <%= p.happines_index %>
-        </td>
-        <td>
-          <%= button_to 'Delete', p,:method => :delete, :class => "btn btn-danger no-link-deco" %>    
-        </td>
+        <%= render "shared/items_table", item: p %> 
       </tr>
       <% end %>
     </tbody>

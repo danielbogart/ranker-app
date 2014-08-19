@@ -24,9 +24,15 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
     @item.destroy
     redirect_to '/items', :notice => "Your item has been deleted"
   end
+
+  def destroy_all
+    @item = current_user.items.all
+    @item.destroy_all
+    redirect_to '/items', :notice => "All your items are belong to us"
+  end   
 
 end

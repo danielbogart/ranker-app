@@ -10,29 +10,13 @@
         <th>Price</th>
         <th>Happiness</th>
         <th><%= link_to 'H Index', "/items/show" %></th>
-        <th><%= link_to 'Delete All', '/items/index/', :method => :delete %></th>
+        <th><%= link_to 'Delete All', 'delete_items', :method => :delete %></th>
       </tr>
     </thead>
 <% if user_signed_in? %>
     <tbody>
       <% @items.order("created_at DESC").each do |p| %>
-      <tr>
-        <td>
-          <%= p.title %>
-        </td>
-        <td>
-          $<%= p.price %>
-        </td> 
-        <td>
-          <%= p.happiness %>
-        </td>
-        <td>
-          <%= p.happines_index %>
-        </td>
-        <td>
-          <%= button_to 'Delete', p, :method => :delete, :class => "btn btn-danger no-link-deco" %>    
-        </td>
-      </tr>
+        <%= render "shared/items_table", item: p %> <!-- set variable item equal to p so that the partial can use it-->
       <% end %>
     </tbody>
   </table>

@@ -1,0 +1,17 @@
+      <tr>
+        <td>
+          <%= item.title %>
+        </td>
+        <td>
+          $<%= item.price %>
+        </td> 
+        <td>
+          <%= item.happiness %>
+        </td>
+        <td>
+          <%= item.happines_index %>
+        </td>
+        <td>
+          <%= button_to 'Delete', item, :method => :delete, :class => "btn btn-danger no-link-deco" %>    
+        </td>
+      </tr>

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  #why a post method? is this okay?
+  delete 'delete_items' => 'items#destroy_all'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
